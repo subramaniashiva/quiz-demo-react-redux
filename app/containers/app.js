@@ -36,6 +36,9 @@ export class App extends Component {
     const answerObj = this.props.userAnswers && this.props.userAnswers.length && this.props.userAnswers.find((answer) => answer.id === questionObj.id);
     return answerObj ? answerObj.answers : [];
   }
+  getAnswer(answers, currentQuestion) {
+    return answers.find((ans) => ans.id === currentQuestion.id)
+  }
   componentDidMount() {
     this.props.dispatch(loadQuestions());
   }
@@ -49,18 +52,25 @@ export class App extends Component {
             this.props.questions && this.props.questions.length ?
             (
               <div className='container'>
+
                 <Score completed={this.props.completed} score={this.props.score} />
+
                 <QuestionIndex currentQuestion={this.props.currentQuestionIndex+1} totalQuestions={this.props.questions.length}/>
+
                 <div className='question-container'>
                   <Question question={this.props.questions[this.props.currentQuestionIndex]}
                     onAnswer={this.handleAnswer.bind(this)}
                     disabled={this.props.completed}
+                    completed={this.props.completed}
+                    answer={this.getAnswer(this.props.correctAnswers, this.props.questions[this.props.currentQuestionIndex])}
                     selectedOptions={this.getSelectedOptions(this.props.questions[this.props.currentQuestionIndex])} />
+
                   <div className='controls-container'>
                     <Button text='Previous' onClick={this.handlePrevious.bind(this)} isDisabled={!this.props.currentQuestionIndex} />
                     <Button text='Next' onClick={this.handleNext.bind(this)} isDisabled={this.props.currentQuestionIndex === this.props.questions.length - 1} />
                   </div>
                 </div>
+
                 <div className='submit-container'>
                   <Button text='Submit Quiz' onClick={this.handleSubmit.bind(this)} isDisabled={this.props.completed} />
                 </div>

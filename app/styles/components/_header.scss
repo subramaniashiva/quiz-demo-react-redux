@@ -1,11 +1,13 @@
 @import "../constants";
 
+$header-bg-color: #333;
+
 .header-container {
   width: 100%;
 }
 .header {
   padding: 24px 16px;
-  background: #333;
+  background: $header-bg-color;
   color: $text-white-color;
   font-size: $font-size-humongous;
 }

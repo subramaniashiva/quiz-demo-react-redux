@@ -1,5 +1,5 @@
 /*
-  Score component - stateless
+  Question Index component - stateless
 */
 import React from 'react';
 import PropTypes from 'prop-types';
