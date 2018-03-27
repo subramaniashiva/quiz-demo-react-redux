@@ -4,6 +4,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Answer from './answer';
+
 import '../styles/components/_question.scss';
 
 export class Question extends Component {
@@ -32,17 +34,22 @@ export class Question extends Component {
         (
           <div className="question">
             <h4 className="question__text">{this.props.question.question}</h4>
-            {this.props.question.options.map((option, index) => {
-              return (
-                <div key={index} className="question__option-container option-container">
-                  <label className="option-container__option">
-                    <input type="radio" disabled={this.props.disabled} value={option} checked={this.state.selectedOptions && this.state.selectedOptions.indexOf(option) !== -1}
-                      onChange={this.handleOptionChange.bind(this)} />
-                      {option}
-                  </label>
-                </div>
+            {
+              this.props.question.options.map((option, index) => {
+                return (
+                  <div key={index} className="question__option-container option-container">
+                    <label className="option-container__option">
+                      <input type="radio" disabled={this.props.disabled} value={option} checked={this.state.selectedOptions && this.state.selectedOptions.indexOf(option) !== -1}
+                        onChange={this.handleOptionChange.bind(this)} />
+                        {option}
+                    </label>
+                  </div>
                 )
-            })}
+              })
+            }
+            {
+              (this.props.completed ? <Answer answer={this.props.answer} /> : '')
+            }
         </div>
         ) : ''
     )
@@ -53,7 +60,9 @@ Question.propTypes = {
   question: PropTypes.object,
   onAnswer: PropTypes.func,
   selectedOptions: PropTypes.array,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
+  completed: PropTypes.bool,
+  answer: PropTypes.object
 }
 
 export default Question;

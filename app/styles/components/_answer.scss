@@ -1,0 +1,13 @@
+@import "../constants";
+
+$answer-bg-color: #cacaca;
+
+.answer {
+  font-size: $font-size-huge;
+  margin: 10px 0;
+  padding: 10px;
+  background: $answer-bg-color;
+  .answer__text {
+    font-weight: bold;
+  }
+}

@@ -24,6 +24,7 @@ export default function userAnswers(state = defaultState, action) {
         return item;
       });
       if (foundAlready) {
+        // Better than manualy iterating and doing a Object.assign
         newState = JSON.parse(JSON.stringify(answered));
       } else {
         newState = JSON.parse(JSON.stringify(state));
