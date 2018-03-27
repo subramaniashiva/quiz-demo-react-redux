@@ -1,10 +1,13 @@
 @import "../constants";
 
+$score-border-color: #045014;
+$score-bg-color: #b0e0ba;
+
 .score {
   padding: 10px;
   font-size: $font-size-huge;
   font-weight: bold;
-  background: #b0e0ba;
-  border: 2px solid #045014;
+  background: $score-bg-color;
+  border: 2px solid $score-border-color;
   margin: 10px 0;
 }
