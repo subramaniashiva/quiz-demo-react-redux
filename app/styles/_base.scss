@@ -1,0 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: $primary-color;
+  color: $text-primary-color;
+  font-family: $primary-font;
+  font-weight: 400;
+  font-size: $base-font-size;
+}

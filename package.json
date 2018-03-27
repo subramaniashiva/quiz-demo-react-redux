@@ -1,0 +1,63 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "An app to play the quiz game - PoC",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --mode development",
+    "lint": "eslint . --ext .js",
+    "test": "jest",
+    "clean": "rm -rf dist/",
+    "prod": "NODE_ENV=production webpack -p",
+    "build": "npm run lint && npm run test && npm run clean && npm run prod"
+  },
+  "author": "Siva",
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
+    "webpack": "^4.1.1",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^23.0.0-alpha.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-react": "^7.7.0",
+    "html-webpack-plugin": "^3.0.7",
+    "jest": "^22.4.2",
+    "node-sass": "^4.7.2",
+    "prop-types": "^15.6.1",
+    "react-test-renderer": "^16.2.0",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack-cli": "^2.0.12"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.*[.](scss|SCSS)$": "<rootDir>/test/emptyModule"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "app"
+    ]
+  }
+}

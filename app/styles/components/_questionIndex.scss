@@ -1,0 +1,9 @@
+@import "../constants";
+
+.question-index {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin: 10px 0;
+  color: $text-insignificant-color;
+}

@@ -1,0 +1,30 @@
+@import "../constants";
+
+.button {
+  background: $button-primary-color;
+  background-image: -webkit-linear-gradient(top, $button-primary-color, $button-primary-gradient-color);
+  background-image: -moz-linear-gradient(top, $button-primary-color, $button-primary-gradient-color);
+  background-image: -ms-linear-gradient(top, $button-primary-color, $button-primary-gradient-color);
+  background-image: -o-linear-gradient(top, $button-primary-color, $button-primary-gradient-color);
+  background-image: linear-gradient(to bottom, $button-primary-color, $button-primary-gradient-color);
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: $font-size-big;
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background: $button-primary-hover-color;
+    background-image: -webkit-linear-gradient(top, $button-primary-hover-color, $button-primary-color);
+    background-image: -moz-linear-gradient(top, $button-primary-hover-color, $button-primary-color);
+    background-image: -ms-linear-gradient(top, $button-primary-hover-color, $button-primary-color);
+    background-image: -o-linear-gradient(top, $button-primary-hover-color, $button-primary-color);
+    background-image: linear-gradient(to bottom, $button-primary-hover-color, $button-primary-color);
+  }
+  &:disabled {
+    background: #d8d8d8;
+    cursor: default;
+    color: $text-primary-color;
+  }
+}

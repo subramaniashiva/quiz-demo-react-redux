@@ -1,0 +1,30 @@
+@import "reset";
+@import "constants";
+@import "base";
+
+.container {
+  margin: 0 auto;
+  @media(min-width: $desktop-min-width) {
+    width: 75%;
+  }
+  @media(max-width: $mobile-max-width) {
+    width: 96%;
+  }
+}
+.question-container {
+  border: 2px solid #222;
+  padding: 10px;
+}
+.controls-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.submit-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 20px;
+}

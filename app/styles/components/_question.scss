@@ -1,0 +1,12 @@
+@import "../constants";
+
+.question {
+  .question__text {
+    font-weight: bold;
+    font-size: $font-size-huge;
+    margin: 10px 0;
+  }
+  .question__option-container {
+    margin: 10px 0;
+  }
+}
