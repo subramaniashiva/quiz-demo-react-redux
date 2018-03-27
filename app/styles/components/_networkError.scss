@@ -1,0 +1,11 @@
+@import "../constants";
+.network-error {
+  padding: 20px;
+  margin: 20px;
+  font-weight: bold;
+  font-size: $font-size-humongous;
+  text-align: center;
+  .network-error__text {
+    margin: 10px 0;
+  }
+}
